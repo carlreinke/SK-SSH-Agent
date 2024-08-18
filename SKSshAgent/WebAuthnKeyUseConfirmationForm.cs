@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace SKSshAgent;
 
-public partial class WebAuthnKeyUseConfirmationForm : Form
+internal partial class WebAuthnKeyUseConfirmationForm : Form
 {
     public WebAuthnKeyUseConfirmationForm()
     {
