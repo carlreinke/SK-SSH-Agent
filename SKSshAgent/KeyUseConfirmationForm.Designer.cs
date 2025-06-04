@@ -57,7 +57,7 @@ partial class KeyUseConfirmationForm
         // _fingerprintTextBox
         // 
         _fingerprintTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-        _fingerprintTextBox.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+        _fingerprintTextBox.Font = new System.Drawing.Font("Consolas", 9F);
         _fingerprintTextBox.Location = new System.Drawing.Point(87, 12);
         _fingerprintTextBox.Name = "_fingerprintTextBox";
         _fingerprintTextBox.ReadOnly = true;
