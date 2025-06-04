@@ -191,12 +191,12 @@ partial class KeyGenerationOptionsForm
         AutoScaleMode = AutoScaleMode.Font;
         CancelButton = _cancelButton;
         ClientSize = new System.Drawing.Size(384, 223);
-        Controls.Add(_encryptCheckBox);
-        Controls.Add(_encryptionGroupBox);
-        Controls.Add(_commentLabel);
-        Controls.Add(_commentTextBox);
         Controls.Add(_cancelButton);
         Controls.Add(_generateButton);
+        Controls.Add(_encryptCheckBox);
+        Controls.Add(_encryptionGroupBox);
+        Controls.Add(_commentTextBox);
+        Controls.Add(_commentLabel);
         Controls.Add(_keyTypeComboBox);
         Controls.Add(_keyTypeLabel);
         FormBorderStyle = FormBorderStyle.FixedDialog;

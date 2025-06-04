@@ -22,8 +22,6 @@ internal static class WebAuthnApi
 {
     public static readonly uint? Version;
 
-    private const int _userIdLength = 32;
-
     private static readonly HRESULT HRESULT_ERROR_CANCELLED = (HRESULT)0x800704C7;
 
     static WebAuthnApi()

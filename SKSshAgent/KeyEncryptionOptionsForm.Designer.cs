@@ -143,15 +143,16 @@ partial class KeyEncryptionOptionsForm
         Controls.Add(_cancelButton);
         Controls.Add(_okayButton);
         Controls.Add(_cipherComboBox);
+        Controls.Add(_cipherLabel);
         Controls.Add(_kdfRoundsNumericUpDown);
+        Controls.Add(_kdfRoundsLabel);
         Controls.Add(_kdfComboBox);
         Controls.Add(_kdfLabel);
-        Controls.Add(_cipherLabel);
-        Controls.Add(_kdfRoundsLabel);
         FormBorderStyle = FormBorderStyle.FixedDialog;
         MaximizeBox = false;
         MinimizeBox = false;
         Name = "KeyEncryptionOptionsForm";
+        ShowInTaskbar = false;
         StartPosition = FormStartPosition.CenterParent;
         Text = "Key Encryption Options";
         ((System.ComponentModel.ISupportInitialize)_kdfRoundsNumericUpDown).EndInit();

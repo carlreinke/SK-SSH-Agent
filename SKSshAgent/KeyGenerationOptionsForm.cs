@@ -6,6 +6,8 @@
 
 using SKSshAgent.Ssh;
 using System;
+using System.Net;
+using System.Net.Sockets;
 using System.Windows.Forms;
 
 namespace SKSshAgent;
@@ -32,9 +34,9 @@ internal partial class KeyGenerationOptionsForm : Form
         string comment = Environment.UserName;
         try
         {
-            comment += "@" + Environment.MachineName;
+            comment += "@" + Dns.GetHostName();
         }
-        catch (InvalidOperationException)
+        catch (SocketException)
         {
             // Nothing to be done about it.
         }

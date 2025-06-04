@@ -117,12 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="_toolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="_requireUserVerificationInfoIcon.ToolTip" xml:space="preserve">
     <value>User verification is accomplished by requiring a PIN or by a
 mechanism that is built into the security key itself.  Not all
 security keys support user verification.</value>
+  </data>
+  <data name="_userIdInfoIcon.ToolTip" xml:space="preserve">
+    <value>The user ID is optional, but omitting it may cause key
+generation to fail on some security keys.
+
+Some security keys will overwrite the previously-generated key
+if a new key is generated with the same user ID and
+application ID.</value>
+  </data>
+  <data name="_applicationIdInfoIcon.ToolTip" xml:space="preserve">
+    <value>The application ID must begin with "ssh:".</value>
   </data>
 </root>

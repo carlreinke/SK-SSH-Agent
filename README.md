@@ -9,7 +9,7 @@ An SSH agent that supports using FIDO/U2F security keys with PuTTY and OpenSSH f
 
 ## Requirements
 
-You need a FIDO/U2F security key, obviously.
+You need a FIDO/U2F security key.  On Windows 11, you can use an Android (version 14 or newer) device as a security key.
 
 ### Client
 

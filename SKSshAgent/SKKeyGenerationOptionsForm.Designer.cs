@@ -41,6 +41,7 @@ partial class SKKeyGenerationOptionsForm
         var resources = new System.ComponentModel.ComponentResourceManager(typeof(SKKeyGenerationOptionsForm));
         _toolTip = new ToolTip(components);
         _requireUserVerificationInfoIcon = new PictureBox();
+        _userIdInfoIcon = new PictureBox();
         _applicationIdInfoIcon = new PictureBox();
         _keyTypeLabel = new Label();
         _keyTypeComboBox = new ComboBox();
@@ -61,6 +62,7 @@ partial class SKKeyGenerationOptionsForm
         _generateButton = new Button();
         _cancelButton = new Button();
         ((System.ComponentModel.ISupportInitialize)_requireUserVerificationInfoIcon).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)_userIdInfoIcon).BeginInit();
         ((System.ComponentModel.ISupportInitialize)_applicationIdInfoIcon).BeginInit();
         _encryptionGroupBox.SuspendLayout();
         SuspendLayout();
@@ -82,6 +84,19 @@ partial class SKKeyGenerationOptionsForm
         _requireUserVerificationInfoIcon.MouseEnter += ShowToolTip;
         _requireUserVerificationInfoIcon.MouseLeave += HideToolTip;
         // 
+        // _userIdInfoIcon
+        // 
+        _userIdInfoIcon.Image = Properties.Resources.information;
+        _userIdInfoIcon.Location = new System.Drawing.Point(349, 66);
+        _userIdInfoIcon.Name = "_userIdInfoIcon";
+        _userIdInfoIcon.Size = new System.Drawing.Size(23, 23);
+        _userIdInfoIcon.SizeMode = PictureBoxSizeMode.CenterImage;
+        _userIdInfoIcon.TabIndex = 0;
+        _userIdInfoIcon.TabStop = false;
+        _toolTip.SetToolTip(_userIdInfoIcon, resources.GetString("_userIdInfoIcon.ToolTip"));
+        _userIdInfoIcon.MouseEnter += ShowToolTip;
+        _userIdInfoIcon.MouseLeave += HideToolTip;
+        // 
         // _applicationIdInfoIcon
         // 
         _applicationIdInfoIcon.Image = Properties.Resources.information;
@@ -91,7 +106,7 @@ partial class SKKeyGenerationOptionsForm
         _applicationIdInfoIcon.SizeMode = PictureBoxSizeMode.CenterImage;
         _applicationIdInfoIcon.TabIndex = 0;
         _applicationIdInfoIcon.TabStop = false;
-        _toolTip.SetToolTip(_applicationIdInfoIcon, "The application ID must begin with \"ssh:\".");
+        _toolTip.SetToolTip(_applicationIdInfoIcon, resources.GetString("_applicationIdInfoIcon.ToolTip"));
         _applicationIdInfoIcon.MouseEnter += ShowToolTip;
         _applicationIdInfoIcon.MouseLeave += HideToolTip;
         // 
@@ -141,7 +156,7 @@ partial class SKKeyGenerationOptionsForm
         _userIdTextBox.Location = new System.Drawing.Point(103, 66);
         _userIdTextBox.Name = "_userIdTextBox";
         _userIdTextBox.PlaceholderText = "(optional)";
-        _userIdTextBox.Size = new System.Drawing.Size(269, 23);
+        _userIdTextBox.Size = new System.Drawing.Size(246, 23);
         _userIdTextBox.TabIndex = 4;
         // 
         // _applicationIdLabel
@@ -284,19 +299,20 @@ partial class SKKeyGenerationOptionsForm
         AutoScaleMode = AutoScaleMode.Font;
         CancelButton = _cancelButton;
         ClientSize = new System.Drawing.Size(384, 306);
-        Controls.Add(_encryptCheckBox);
-        Controls.Add(_encryptionGroupBox);
-        Controls.Add(_applicationIdInfoIcon);
-        Controls.Add(_requireUserVerificationInfoIcon);
-        Controls.Add(_requireUserVerificationCheckBox);
-        Controls.Add(_applicationIdTextBox);
-        Controls.Add(_applicationIdLabel);
-        Controls.Add(_userIdTextBox);
-        Controls.Add(_userIdLabel);
-        Controls.Add(_commentLabel);
-        Controls.Add(_commentTextBox);
         Controls.Add(_cancelButton);
         Controls.Add(_generateButton);
+        Controls.Add(_encryptCheckBox);
+        Controls.Add(_encryptionGroupBox);
+        Controls.Add(_commentTextBox);
+        Controls.Add(_commentLabel);
+        Controls.Add(_applicationIdInfoIcon);
+        Controls.Add(_applicationIdTextBox);
+        Controls.Add(_applicationIdLabel);
+        Controls.Add(_userIdInfoIcon);
+        Controls.Add(_userIdTextBox);
+        Controls.Add(_userIdLabel);
+        Controls.Add(_requireUserVerificationInfoIcon);
+        Controls.Add(_requireUserVerificationCheckBox);
         Controls.Add(_keyTypeComboBox);
         Controls.Add(_keyTypeLabel);
         FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -307,6 +323,7 @@ partial class SKKeyGenerationOptionsForm
         StartPosition = FormStartPosition.CenterParent;
         Text = "Key Generation Options";
         ((System.ComponentModel.ISupportInitialize)_requireUserVerificationInfoIcon).EndInit();
+        ((System.ComponentModel.ISupportInitialize)_userIdInfoIcon).EndInit();
         ((System.ComponentModel.ISupportInitialize)_applicationIdInfoIcon).EndInit();
         _encryptionGroupBox.ResumeLayout(false);
         _encryptionGroupBox.PerformLayout();
@@ -323,6 +340,7 @@ partial class SKKeyGenerationOptionsForm
     private System.Windows.Forms.PictureBox _requireUserVerificationInfoIcon;
     private System.Windows.Forms.Label _userIdLabel;
     private System.Windows.Forms.TextBox _userIdTextBox;
+    private System.Windows.Forms.PictureBox _userIdInfoIcon;
     private System.Windows.Forms.Label _applicationIdLabel;
     private System.Windows.Forms.TextBox _applicationIdTextBox;
     private System.Windows.Forms.PictureBox _applicationIdInfoIcon;

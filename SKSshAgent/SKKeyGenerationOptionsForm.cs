@@ -7,6 +7,8 @@
 using SKSshAgent.Ssh;
 using System;
 using System.Media;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using System.Windows.Forms;
 
@@ -33,12 +35,14 @@ internal partial class SKKeyGenerationOptionsForm : Form
 
         _keyTypeComboBox.SelectedItem = SshKeyTypeInfo.OpenSshSKEcdsaSha2NistP256;
 
+        _userIdTextBox.Text = Environment.UserName;
+
         string comment = Environment.UserName;
         try
         {
-            comment += "@" + Environment.MachineName;
+            comment += "@" + Dns.GetHostName();
         }
-        catch (InvalidOperationException)
+        catch (SocketException)
         {
             // Nothing to be done about it.
         }
