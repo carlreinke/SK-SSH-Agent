@@ -8,7 +8,6 @@ using SKSshAgent.Cose;
 using SKSshAgent.Ssh;
 using SKSshAgent.WebAuthn;
 using System;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
@@ -45,8 +44,16 @@ internal static class WebAuthnApi
     /// <exception cref="OperationCanceledException"/>
     /// <exception cref="TimeoutException"/>
     /// <exception cref="InvalidDataException"/>
-    /// <exception cref="Win32Exception"/>
-    public static MakeCredentialResult MakeCredential(HWND hWnd, string rpId, ReadOnlySpan<byte> userId, string userName, SshKeyTypeInfo keyTypeInfo, OpenSshSKFlags flags, ReadOnlySpan<byte> challenge, CancellationToken cancellationToken)
+    /// <exception cref="Exception"/>
+    public static MakeCredentialResult MakeCredential(
+        HWND hWnd,
+        string rpId,
+        ReadOnlySpan<byte> userId,
+        string userName,
+        SshKeyTypeInfo keyTypeInfo,
+        OpenSshSKFlags flags,
+        ReadOnlySpan<byte> challenge,
+        CancellationToken cancellationToken)
     {
         if (!(Version >= WEBAUTHN_API_VERSION_1))
             throw new NotSupportedException("Insufficient WebAuthn version.");
@@ -184,8 +191,15 @@ internal static class WebAuthnApi
     /// <exception cref="OperationCanceledException"/>
     /// <exception cref="TimeoutException"/>
     /// <exception cref="InvalidDataException"/>
-    /// <exception cref="Win32Exception"/>
-    public static GetAssertionResult GetAssertion(HWND hWnd, CoseKey key, string rpId, ReadOnlySpan<byte> keyHandle, OpenSshSKFlags flags, ReadOnlySpan<byte> challenge, CancellationToken cancellationToken)
+    /// <exception cref="Exception"/>
+    public static GetAssertionResult GetAssertion(
+        HWND hWnd,
+        CoseKey key,
+        string rpId,
+        ReadOnlySpan<byte> keyHandle,
+        OpenSshSKFlags flags,
+        ReadOnlySpan<byte> challenge,
+        CancellationToken cancellationToken)
     {
         if (!(Version >= WEBAUTHN_API_VERSION_1))
             throw new NotSupportedException("Insufficient WebAuthn version.");
@@ -341,7 +355,7 @@ internal static class WebAuthnApi
     /// <exception cref="OperationCanceledException"/>
     /// <exception cref="NotSupportedException"/>
     /// <exception cref="TimeoutException"/>
-    /// <exception cref="Win32Exception"/>
+    /// <exception cref="Exception"/>
     private static void ThrowIfError(HRESULT hr)
     {
         // https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-erref/32cce05d-3a39-4c7e-8f66-5e788e1107cf
@@ -353,7 +367,7 @@ internal static class WebAuthnApi
         else if (hr == HRESULT.RPC_E_TIMEOUT)
             throw new TimeoutException("The requested operation timed out.");
         else if (hr != 0)
-            throw new Win32Exception(hr, $"{hr.Value:X8}: {WebAuthNGetErrorName(hr)}");
+            throw new Exception($"0x{hr.Value:X8}: {WebAuthNGetErrorName(hr)}") { HResult = hr };
     }
 
     public sealed class MakeCredentialResult
